@@ -1,0 +1,78 @@
+<div class="container-fluid">
+    <form class="form-horizontal" [ngFormModel]="postAdvertForm" (submit)="postAdvert()">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>Post Advert</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+
+                <label class="col-md-2 control-label">Car Make</label>
+                <div class="col-md-4">
+                    <input ngControl='make' name="make" type="text" placeholder="e.g Ford, Hyundai etc.." class="form-control input-md" required="">
+
+                </div>
+
+                <label class="col-md-2 control-label">Car Model</label>
+                <div class="col-md-4">
+                    <input ngControl='model' name="model" type="text" placeholder="e.g Fiesta, i10 etc.." class="form-control input-md" required="">
+
+                </div>
+
+
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-2 control-label">Manufacture Year</label>
+                <div class="col-md-4">
+                    <input ngControl='year' name="year" type="text" placeholder="e.g 2010, 2012 etc.." class="form-control input-md" required="">
+
+                </div>
+                <label class="col-md-2 control-label">Mileage</label>
+                <div class="col-md-4">
+                    <input ngControl='mileage' name="mileage" type="text" placeholder="e.g 45000, 50000 etc.." class="form-control input-md" required="">
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-2 control-label">Price</label>
+                <div class="col-md-4">
+                    <input ngControl='price' name="price" type="text" placeholder="e.g 7000, 5000 etc.." class="form-control input-md" required="">
+
+                </div>
+
+                <label class="col-md-2 control-label">Fuel Type</label>
+                <div class="col-md-4">
+                    <input ngControl='fuel' name="fuel" type="text" placeholder="e.g Petrol, Diesel" class="form-control input-md" required="">
+
+                </div>
+            </div>
+
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-2 control-label">Add Photos</label>
+                <div class="col-md-4">
+                    <input ngControl='image' name="image" class="input-file" type="file">
+                </div>
+
+                <label class="col-md-2 control-label">Car Description</label>
+                <div class="col-md-4">
+                    <textarea ngControl='description' class="form-control" name="description" placeholder="Add Description Here...."></textarea>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="singlebutton"></label>
+                <div class="col-md-4">
+                    <button id="singlebutton" name="singlebutton" class="btn btn-lg btn-primary">Post Advert</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</div>

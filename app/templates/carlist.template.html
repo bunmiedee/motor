@@ -1,0 +1,58 @@
+<hr>
+
+
+    <div class="row" *ngFor="let carAdvert of cars,let i=index">
+
+            <div class="panel panel-default">
+<!--                <div class="panel-heading">
+                    <h4 class="page-title">{{carAdvert.Make}}| {{carAdvert.Model}} | {{carAdvert.Mileage}} | {{carAdvert.Price}} |
+                        {{carAdvert.Fuel}}</h4>
+                </div>-->
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3"><img src="https://placeimg.com/100/100/nature" class="img-thumbnail"
+                                                   alt="Cinque Terre" width="225" height="100"></div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-12"><h4>{{carAdvert.Make}}  {{carAdvert.Model}}</h4></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h5>{{carAdvert.Mileage}} miles | {{carAdvert.Fuel}} | £{{carAdvert.Price}} | {{carAdvert.Year}}</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div>{{carAdvert.Description | lowercase | slicePipe:200}}</div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div collapse-click class="col-md-12 collapsed">
+                                    <div><a href="#">Show more photos</a></div>
+                                    <div class="row collapsible-section">
+                                        <div class="col-md-2"><img src="https://placeimg.com/100/100/nature" class="img-thumbnail"
+                                                   alt="Cinque Terre" width="50" height="50"></div>
+                                        <div class="col-md-2"><img src="https://placeimg.com/100/100/nature" class="img-thumbnail"
+                                                   alt="Cinque Terre" width="50" height="50"></div>
+                                        <div class="col-md-2"><img src="https://placeimg.com/100/100/nature" class="img-thumbnail"
+                                                   alt="Cinque Terre" width="50" height="50"></div>
+                                        <div class="col-md-2"><img src="https://placeimg.com/100/100/nature" class="img-thumbnail"
+                                                   alt="Cinque Terre" width="50" height="50"></div>
+                                        <div class="col-md-2"><img src="https://placeimg.com/100/100/nature" class="img-thumbnail"
+                                                                   alt="Cinque Terre" width="50" height="50"></div>
+                                        <div class="col-md-2"><img src="https://placeimg.com/100/100/nature" class="img-thumbnail"
+                                                                   alt="Cinque Terre" width="50" height="50"></div>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+              <!--          -->
+                    </div>
+                </div>
+            </div>
+
+    </div>

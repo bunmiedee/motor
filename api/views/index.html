@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><title>hello</title><script src="../public/jquery-2.1.0.min.js"></script></head><body><h1>Welcome</h1><h2> This is a Jade Page</h2><form method="post" action="/personjson"><input name="firstName"><input name="lastName"><input type="submit" value="ok"></form><script>$.ajax({
+    type:"POST",
+    url:"/personjson",
+    data:JSON.stringify({
+        firstName: 'Jane',
+        lastName: 'Doe..'
+    }),
+    dataType:'json',
+    contentType:'application/json'
+})</script></body></html>

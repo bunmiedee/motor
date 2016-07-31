@@ -1,0 +1,36 @@
+/*
+.navbar-inverse {
+    background-color: #337ab7;
+    border-color: #dff0d8;
+}
+.navbar-inverse .navbar-brand{
+    color: #FFFFFF;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{
+    background-color: rgba(65, 161, 244, 0.73);
+    color: #FFFFFF;
+}*/
+/*
+
+.panel-primary {
+    border-color: #3AA9E8;
+    background: #B9E0F2;
+}
+*/
+.panel-default > .panel-heading {
+    color: #555555;
+    background-color: rgba(23, 138, 204, 0.1);
+    border-color: #dddddd;
+}
+.panel-default > .panel-heading .badge h1 {
+    color: #ffffff;
+    background-color: #555555;
+    padding: 5px;
+}
+
+.myBorder{
+    border: solid 1px #4868ff;
+}
+.collapsed .collapsible-section{
+    display: none;
+}

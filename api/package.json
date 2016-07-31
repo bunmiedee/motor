@@ -1,0 +1,29 @@
+{
+  "name": "learn",
+  "version": "1.0.0",
+  "description": "Learn Node Express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ok"
+  },
+  "keywords": [
+    "ok"
+  ],
+  "author": "kam",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "express-fileupload": "0.0.5",
+    "jwt-simple": "^0.5.0",
+    "mongoose": "^4.4.17",
+    "multer": "^1.1.0",
+    "pug": "^2.0.0-alpha7"
+  }
+}
