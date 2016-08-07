@@ -32,9 +32,10 @@ System.register(['@angular/core', '../services/cars.service', '@angular/common',
                     this._carservice = _carservice;
                     this._router = _router;
                     this.registerForm = fb.group({
-                        username: ['', common_1.Validators.required],
-                        password: ['', common_1.Validators.required]
+                        username: ['', common_1.Validators.compose([common_1.Validators.required, common_1.Validators.minLength(5)])],
+                        password: ['', common_1.Validators.compose([common_1.Validators.required, common_1.Validators.minLength(5)])]
                     });
+                    console.log(this.registerForm.controls);
                 }
                 RegisterComponent.prototype.registerUser = function () {
                     this._carservice.postUsers(this.registerForm.value);

@@ -14,10 +14,10 @@ export class RegisterComponent{
 
     constructor(private _carservice:CarsService,fb:FormBuilder,private _router:Router){
         this.registerForm = fb.group({
-            username:['',Validators.required],
-            password:['',Validators.required]
-
+            username:['',Validators.compose([Validators.required,Validators.minLength(5)])],
+            password:['',Validators.compose([Validators.required,Validators.minLength(5)])]
         })
+        console.log(this.registerForm.controls);
     }
     registerUser(){
         this._carservice.postUsers(this.registerForm.value);

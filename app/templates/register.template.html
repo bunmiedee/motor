@@ -8,7 +8,14 @@
                 <div class="row">
                     <label class="col-md-2 control-label">Email</label>
                     <div class="col-md-4">
-                        <input ngControl='username' name="username" type="email" placeholder="Email.." class="form-control input-md" required="">
+                        <input ngControl='username' type="email" placeholder="Email.." class="form-control input-md" #username = "ngForm" autofocus>
+                       <div *ngIf="username.dirty">
+                           <div class="alert alert-danger" *ngIf="username.errors">
+                               <div *ngIf="username.errors.required">Username is required !!</div>
+                               <div *ngIf="username.errors.minlength">Username too short !!</div>
+                           </div>
+                       </div>
+
                     </div>
                     <div class="row">
                         <div class="col-md-12"><br></div>
@@ -17,7 +24,13 @@
                 <div class="row">
                     <label class="col-md-2 control-label">Password</label>
                     <div class="col-md-4">
-                        <input ngControl='password' name="password" type="password" placeholder="Password.." class="form-control input-md" required="">
+                        <input ngControl='password' name="password" type="password" placeholder="Password.." class="form-control input-md" #password = "ngForm">
+                        <div *ngIf="password.dirty && !username.error">
+                            <div class="alert alert-danger" *ngIf="password.errors">
+                                <div *ngIf="password.errors.required">Password is required !!</div>
+                                <div *ngIf="password.errors.minlength">Password too short !!</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -25,7 +38,7 @@
             <div class="form-group">
                 <label class="col-md-2 control-label" for="singlebutton"></label>
                 <div class="col-md-4">
-                    <button id="singlebutton" name="singlebutton" class="btn btn-md btn-primary">Register</button>
+                    <button id="singlebutton" name="singlebutton" class="btn btn-md btn-primary" [disabled] = "!registerForm.valid">Register</button>
                 </div>
             </div>
         </fieldset>
