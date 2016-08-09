@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var cars = require('./routes/cars');
 var users = require('./routes/users');
+var autos = require('./routes/autos');
 var photos = require('./routes/photos');
 
 app.use(function (req, res, next) {
@@ -13,6 +14,7 @@ app.use(function (req, res, next) {
 app.use('/cars', cars);
 app.use('/users', users);
 app.use('/photos',photos);
+app.use('/autos',autos);
 /*
 app.post('/profile', upload.single('avatar'), function (req, res, next) {
     console.log(req.file)
@@ -20,8 +22,10 @@ app.post('/profile', upload.single('avatar'), function (req, res, next) {
     // req.body will hold the text fields, if there were any
 })*/
 var mongoose = require('mongoose');
-
-mongoose.connect('mongodb://127.0.0.1:27017/motors'); // local machine
+mongoose.connect('mongodb://kam2016:hello123@212.227.255.76:27017/motors');
+//mongoose.connect('mongodb://xxx:xxx@127.0.0.1:27017/motors'); // Ubuntu Server
+//mongoose.connect('mongodb://my-mongodb:27017/motors'); //virtual box/docker container
+//mongoose.connect('mongodb://127.0.0.1:27017/motors'); // local machine
 mongoose.connection.on("open", function (ref) {
     console.log("Connected to mongo server.");
     //return start_up();

@@ -25,6 +25,7 @@ System.register(['@angular/core', '../services/cars.service'], function(exports_
                 function SearchForm(_carservice) {
                     this._carservice = _carservice;
                     this.selectedMake = "BMW";
+                    this.select = new core_1.EventEmitter();
                 }
                 SearchForm.prototype.getModels = function (arraySelected, makeSelected) {
                     for (var _i = 0, arraySelected_1 = arraySelected; _i < arraySelected_1.length; _i++) {
@@ -39,12 +40,17 @@ System.register(['@angular/core', '../services/cars.service'], function(exports_
                 };
                 SearchForm.prototype.ngOnInit = function () {
                     var _this = this;
-                    this._carservice.getCars()
+                    this.select.emit('');
+                    this._carservice.getAutos()
                         .subscribe(function (cars) {
                         _this.cars = cars;
                         _this.models = _this.cars[0].Model;
                     });
                 };
+                __decorate([
+                    core_1.Output(), 
+                    __metadata('design:type', Object)
+                ], SearchForm.prototype, "select", void 0);
                 SearchForm = __decorate([
                     core_1.Component({
                         selector: 'search-form',

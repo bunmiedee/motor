@@ -3,18 +3,27 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {Injectable} from '@angular/core';
 import {Car} from '../interfaces/cars.interface';
+import {Auto} from '../interfaces/autos.interface';
 //import localStorage from 'localStorage';
 
 @Injectable()
 export class CarsService {
     private loggedIn = false;
-    private _getUrl:string = 'http://www.edgetheinstitute.com:9000/cars';
+    private _getAutoUrl:string = 'http://www.edgetheinstitute.com:9000/autos';
+   private _getUrl:string = 'http://www.edgetheinstitute.com:9000/cars';
+   // private _getUrl:string = 'http://localhost:9000/cars';
     // private _postUrl:string='http://localhost:8000/car';
     private _postUsersUrl:string = 'http://www.edgetheinstitute.com:9000/users';
+    //private _postUsersUrl:string = 'http://localhost:9000/users';
     private _authenticateUrl:string = 'http://www.edgetheinstitute.com:9000/users/authenticate';
+    //private _authenticateUrl:string = 'http://localhost:9000/users/authenticate'
     private _photosUrl:string = 'http://localhost:9000/photos';
     constructor(private _http:Http) {
         this.loggedIn = !!localStorage.getItem('auth_token');
+    }
+    getAutos():Observable<Auto[]>{
+        return this._http.get(this._getAutoUrl)
+            .map(response=>response.json())
     }
     getCars():Observable<Car[]> {
         return this._http.get(this._getUrl)

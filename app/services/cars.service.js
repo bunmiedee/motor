@@ -27,13 +27,21 @@ System.register(['@angular/http', 'rxjs/add/operator/map', '@angular/core'], fun
                 function CarsService(_http) {
                     this._http = _http;
                     this.loggedIn = false;
+                    this._getAutoUrl = 'http://www.edgetheinstitute.com:9000/autos';
                     this._getUrl = 'http://www.edgetheinstitute.com:9000/cars';
+                    // private _getUrl:string = 'http://localhost:9000/cars';
                     // private _postUrl:string='http://localhost:8000/car';
                     this._postUsersUrl = 'http://www.edgetheinstitute.com:9000/users';
+                    //private _postUsersUrl:string = 'http://localhost:9000/users';
                     this._authenticateUrl = 'http://www.edgetheinstitute.com:9000/users/authenticate';
+                    //private _authenticateUrl:string = 'http://localhost:9000/users/authenticate'
                     this._photosUrl = 'http://localhost:9000/photos';
                     this.loggedIn = !!localStorage.getItem('auth_token');
                 }
+                CarsService.prototype.getAutos = function () {
+                    return this._http.get(this._getAutoUrl)
+                        .map(function (response) { return response.json(); });
+                };
                 CarsService.prototype.getCars = function () {
                     return this._http.get(this._getUrl)
                         .map(function (response) { return response.json(); });

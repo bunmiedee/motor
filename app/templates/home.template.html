@@ -1,16 +1,13 @@
 <div class="row">
- <!--   <h2>Search:</h2>-->
-    <div id="custom-search-input">
-        <div class="input-group col-md-12">
-            <input type="text" class="  search-query form-control" placeholder="Quick Search..."/>
-                                <span class="input-group-btn">
-                                    <button class="btn btn-primary" type="button">
-                                        <span class=" glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
-        </div>
+    <div class="col-md-4">
+        <search-form (select) = "selectMake = $event" (select) = "selectModel = $event"></search-form>
+    </div>
+    <div class="col-md-8">
+        <search-bar (update) ="searchQuery = $event"></search-bar>
+        <hr>
+        <car-list [searchQuery] = "searchQuery" [selectMake] = "selectMake" [selectModel] = "selectModel"></car-list>
     </div>
 </div>
 
+
 <!--<img src="../app/images/hero/bmw.jpg" alt="" width="1140">-->
-<car-list></car-list>

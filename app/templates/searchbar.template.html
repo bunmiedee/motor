@@ -1,0 +1,14 @@
+<!--   <h2>Search:</h2>-->
+<div id="custom-search-input">
+    <div class="input-group">
+<!--
+        <input [(ngModel)]="query" type="text" class="search-query form-control" placeholder="Quick Search" autofocus/>
+-->
+        <input type="text" #input (input) ="update.emit(input.value)" class="search-query form-control" placeholder="Quick Search" autofocus>
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="button">
+                    <span class=" glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+    </div>
+</div>
