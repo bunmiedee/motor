@@ -27,6 +27,7 @@ System.register(['@angular/core', '../services/cars.service', '@angular/common']
             PlaceAdvertComponent = (function () {
                 function PlaceAdvertComponent(_carservice, fb) {
                     this._carservice = _carservice;
+                    this.selectedMake = "BMW";
                     this.make = "BMW";
                     this.body = JSON.stringify({ make: "Ryan" });
                     this.creds = "make=" + this.make;
@@ -41,10 +42,29 @@ System.register(['@angular/core', '../services/cars.service', '@angular/common']
                         description: ['', common_1.Validators.required]
                     });
                 }
+                PlaceAdvertComponent.prototype.getModels = function (arraySelected, makeSelected) {
+                    for (var _i = 0, arraySelected_1 = arraySelected; _i < arraySelected_1.length; _i++) {
+                        var arrayItem = arraySelected_1[_i];
+                        if (makeSelected == arrayItem.Make) {
+                            return this.models = arrayItem.Model;
+                        }
+                    }
+                };
+                PlaceAdvertComponent.prototype.onChange = function (newValue) {
+                    this.getModels(this.autos, newValue);
+                };
                 PlaceAdvertComponent.prototype.postAdvert = function () {
                     this._carservice.postCars(this.postAdvertForm.value);
                     // console.log(this.loginForm.value);
                     // event.preventDefault();
+                };
+                PlaceAdvertComponent.prototype.ngOnInit = function () {
+                    var _this = this;
+                    this._carservice.getAutos()
+                        .subscribe(function (autos) {
+                        _this.autos = autos;
+                        _this.models = _this.autos[0].Model;
+                    });
                 };
                 PlaceAdvertComponent = __decorate([
                     core_1.Component({
